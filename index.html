@@ -1,0 +1,625 @@
+<!doctype html>
+<html>
+    <head>
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CDN & Stylesheets -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="stylesheets/main.css">
+        
+        <title>Dashboard</title>
+    </head>
+
+    <body>
+        
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header text-left mt-3">
+                    <div class="d-flex justify-content-start"  >
+                        <i class="fa fa-arrow-left" id="dismiss" style="cursor: pointer;"></i>
+                     </div>
+                    <h3 class="mt-3">TapOn</h3>
+                   
+                </div>
+        
+                <ul class="list-unstyled components">
+                    <li class="dropdown-header text-white">ACCOUNT</li> 
+
+                    <li class="mb-3 mt-3">
+                        <a href="#accSubmenu" data-toggle="collapse" aria-expanded="false" class="text-left font-weight-bold">Hello, User  <i class="fa fa-arrow-down" style="cursor: pointer;"></i></a>
+                        <ul class="collapse list-unstyled" id="accSubmenu">
+                            <li>
+                                <a href="#">Account</a>
+                            </li>
+                            <li>
+                                <a href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-header text-white">SERVICES</li> 
+                 
+                    <li class="active">
+                        <a href="#plantsSubmenu" data-toggle="collapse" aria-expanded="false">Plants-Description</a>
+                    </li>
+                    <li>
+                       
+                        <a href="#dischargeSubmenu" data-toggle="collapse" aria-expanded="false">Discharge-License</a>
+                        <ul class="collapse list-unstyled" id="dischargeSubmenu">
+                            <li>
+                                <a href="#">Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#schematicsSubmenu" data-toggle="collapse" aria-expanded="false">Shop-Drawing</a>
+                        <ul class="collapse list-unstyled" id="schematicsSubmenu">
+                            <li>
+                                <a href="#">Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#equipmentSubmenu" data-toggle="collapse" aria-expanded="false">Equipment-List</a>
+                        <ul class="collapse list-unstyled" id="equipmentSubmenu">
+                            <li>
+                                <a href="#">Fill</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#chemtSubmenu">Sampling-Result</a>
+                    </li>
+
+                </ul>
+            </nav>
+            
+            <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="navbar">
+
+                    <div class="container-fluid d-flex bd-highlight">
+                 
+                        <div id="navbarLogo" class="p-2 flex-grow-1 bd-highlight navTrigger text-white">TapOn</div>
+
+                        <div class="p-2 bd-highlight mr-3 text-white" id="accountGreeting" class="navTrigger">
+                            Hello, User.
+                        </div>
+                        <div class="p-2 bd-highlight"> 
+                            <button type="button" id="sidebarCollapse" class="btn btn-info ">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+              
+            
+            <!--CONTAINER FOR GRAPHS-->
+            
+       
+            <div class="col" id="all-graph_container">
+
+                <!--Overall chart-->
+                <div class="row">
+                    <div class="col d-md-flex align-items-center justify-content-center">
+                        <div class="card " id="overallgraph">
+                            <div class="card-body">
+                                <div> <h5 class="">Overall System</h5></div>
+                                <p class="card-text"> 
+                                    <div class="row d-md-flex align-items-center justify-content-center">
+                                        <img src="refs/chart.jpeg" class="chart-container w-75">
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Graph 1-->
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div> <h5 class="">Nutrient System</h5></div>
+                                <p class="card-text"> 
+                                    <div class="row d-md-flex align-items-center justify-content-center">
+                                        <div class="chart-container " id="graph_1">
+                                            <canvas id="myChart"></canvas>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+             
+                <!--Graph 2 and 3-->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Anoxic Dissolved Oxygen</h5>
+                                <p class="card-text"> <!--Graph 2-->
+                                    <div class="row d-md-flex align-items-center justify-content-center">
+                                        <div class="chart-container " id="graph_2">
+                                            <canvas id="myChart2"></canvas>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Aerobic Dissolved Oxygen</h5>
+                                <p class="card-text"> <!--Graph 3-->
+                                    <div class="row d-md-flex align-items-center justify-content-center">
+                                        <div class="chart-container " id="graph_3">
+                                            <canvas id="myChart3"></canvas>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Table Information-->
+                <div class="row">
+                    <div class="col d-md-flex align-items-center justify-content-center">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">Active Status</h5>
+                                <p class="card-text"> <!--Graph 2-->
+                                    <div class="row d-md-flex align-items-center justify-content-center">
+                                        <div class="chart-container  d-md-flex align-items-center justify-content-center vertical-center2" id="tableInfo">
+                                            <table id="table1" class="w-100">
+                                                <tr>
+                                                    <th>Equipment</th>
+                                                    <th>Influence</th>
+                                                    <th>Recycling</th>
+                                                    <th>Effluent</th>
+                                                    <th>Affluent</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>  
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="activatedTime">ON</div>
+                                                        <div class="inactivatedTime">OFF</div>
+                                                        <div class="processTimer"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+        
+        <!--CDNs-->
+        <!-- jQuery CDN-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+         
+        <!--GSAP Animations-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+         
+        <!--Chart.js CDN-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        
+         <!--Sidebar javascript-->
+         <script type="text/javascript">
+          
+            $(document).ready(function () {
+                var win = $(window);
+                
+                //determine whether navbar transparent or not based on window settings.active
+                if(win.width() < 420){
+                    var $nav = $("#navbar");
+                    var $acc = $(".navTrigger");
+
+                    $nav.addClass("bg-transparent");
+                    $nav.removeClass("bg-dark");
+
+                    $acc.addClass("text-dark");
+                    $acc.removeClass("text-white");
+                }
+
+                //For sidebar resizing
+                $('#sidebarCollapse').on('click', function () {
+                    // trigger sidebar
+                    $('#sidebar').toggleClass('active');
+                    // trigger overlay
+                    $('.overlay').toggleClass('active');
+                 
+                    
+                });
+                
+                //For dismiss button in sidebar
+                $('#dismiss').on('click', function () {
+                    // hide sidebar
+                    $('#sidebar').toggleClass('active');
+                    // hide overlay
+                    $('.overlay').removeClass('active');
+                    $('div#all-graph_container').removeClass("shiftOut")
+                });
+            });
+        </script>
+
+        <!--Window resizing adjustment when sidebar is active-->
+        <script>
+            var win = $(window);
+            $(window).on('resize', function() {
+                var $nav = $('#navbar');
+                var $acc = $(".navTrigger");
+
+                if(win.width() < 500){
+                    $nav.removeClass('bg-dark');
+                    $nav.addClass('bg-transparent');
+
+                    $acc.addClass("text-dark");
+                    $acc.removeClass("text-white");
+                }
+                if(win.width() >= 500){
+                    $nav.removeClass('bg-transparent');
+                    $nav.addClass('bg-dark');
+
+                    
+                    $acc.addClass("text-white");
+                    $acc.removeClass("text-dark");
+                }
+                if(win.width() < 400){
+                    $('#sidebar').addClass('active');
+                    $('div#all-graph_container').addClass("shiftOut")
+                
+                }
+                else{
+                    $('div#all-graph_container').removeClass("shiftOut")
+             
+                }
+            });
+                
+                
+
+        </script>
+
+        <!--Testing Graph-->
+
+        <!--RANDOMIZED TESTING FOR GRAPHS-->
+        <script>
+            //Generates random values each time page refreshes for chart demonstration.
+            function generateRandom(maxX, maxY){
+                const data = []
+                
+                for(i = 0; i <= maxX; i++){
+                    var countY = ((Math.random() * maxY) + 0);
+                    var countX = i;
+                    data.push({x: countX, y: countY});
+                }
+                return data;
+            }
+        </script>
+
+        <!--Generate the Graphs-->  
+        <script>
+            //Line Charts for each measure.
+            var ctx1 = document.getElementById('myChart').getContext('2d');
+            var ctx2 = document.getElementById('myChart2').getContext('2d');
+            var ctx3 = document.getElementById('myChart3').getContext('2d');
+
+            //Generate the chart.
+
+            //OVERALL CHART FOR NUTRIENT SYSTEM
+            var myChart = new Chart(ctx1, {
+                type: 'line',
+                data: {
+                    labels: ['Influent', 'Anoxic', 'Aerobic', 'Effluent'],
+                    datasets: 
+                    [
+                        {
+                            label: 'NH4', 
+                            data: [30, 19, 3, 5],
+                            backgroundColor: [
+                                'rgba(255, 255, 0, 0.4)',
+                            ],
+                            borderColor: [
+                                'rgba(0, 0, 255, 0.5)',
+                               
+                            ],
+                            borderWidth: 1,
+                            pointBackgroundColor:'rgba(0, 0, 0, 0.6)'
+                        },
+                        
+                        {
+                            label: 'NO3', 
+                            data: [34, 30, 31, 53],
+                            backgroundColor: [
+                                'rgba(0, 0, 255, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',
+                            ],
+                            borderWidth: 1,
+                            pointBackgroundColor:'rgba(0, 0, 0, 0.6)'
+                        }
+                    ],
+                },
+                
+                
+                options: {
+                    elements:{
+                        line:{tension:0}
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 4,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'DO (mg/L)'
+                            }
+                        }]
+                    },
+                    //For showing information when hovering over points.
+                    tooltipFillColor: "rgba(0,0,0,0.8)",                
+                    multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+                }
+            });
+            
+            //OVERALL CHART FOR Anoxic DO
+            var myChart2 = new Chart(ctx2, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        showLine:true,
+                        label: 'Anoxic DO', 
+                        data: generateRandom(12, 2),
+                        backgroundColor: [
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,
+                        pointBackgroundColor:'rgba(0, 0, 0, 0.6)'
+                    }],
+                    
+                },
+                   
+                options: {
+                    elements:{
+                        line:{tension:0}
+                    },
+                    scales: {
+                        xAxes:[{
+                            type: 'linear',
+                            position: 'bottom',
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Time/Hour'
+                            },
+                            
+                        }],
+                        yAxes: [{
+                            type: 'linear',
+                            position: 'bottom',
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 0.5,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'DO (mg/L)'
+                            }
+                        }]
+                    }
+                },
+                //For showing information when hovering over points.
+                tooltipFillColor: "rgba(0,0,0,0.8)",                
+                multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+
+            });
+            
+            //OVERALL CHART FOR Aeration DO
+            var myChart3 = new Chart(ctx3, {
+               type: 'scatter',
+                data: {
+                    datasets: [{
+                        showLine:true,
+                        label: 'Aerobic DO', 
+                        data: generateRandom(12, 2),
+                        backgroundColor: [
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,
+                        pointBackgroundColor:'rgba(0, 0, 0, 0.6)'
+                    }],
+                    
+                },
+                   
+                options: {
+                    elements:{
+                        line:{tension:0}
+                    },
+                    scales: {
+                        xAxes:[{
+                            type: 'linear',
+                            position: 'bottom',
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Time/Hour'
+                            },
+                            
+                        }],
+                        yAxes: [{
+                            type: 'linear',
+                            position: 'bottom',
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 0.5,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'DO (mg/L)'
+                            }
+                        }]
+                    }
+                }
+
+            });
+        
+        </script>
+
+        <!--Timer for tables-->
+        <script>
+            function startTimer(duration, display1) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    display1.text(minutes + ":" + seconds);
+
+                    if (--timer < 0) {
+                        timer = duration;
+                        display1.style.display = "none";
+                    }
+                }, 1000);
+            }
+        </script>
+
+        <!--RANDOMIZED TESTING FOR ACTIVITY-->
+        <script>
+            window.onload = function () {
+                var fiveMinutes = 60 * 10;
+                    
+                var testInputArr = [];
+                const tenMins = 1 * 60;
+
+                for(let i = 0; i < $('.processTimer').length; i++){
+                    var testInput = ((Math.random() * 1) + 0 );
+                    if(testInput < 0.5)
+                        testInput = Math.floor(testInput);
+                    if(testInput >= 0.5)
+                        testInput = Math.ceil(testInput);
+
+
+                    testInputArr.push(testInput);
+                }
+                console.log(testInputArr);
+                
+                for(let j = 0; j < testInputArr.length; j++){
+                    if(testInputArr[j] == 1){
+                        $('td').children(".activatedTime").eq(j).addClass("active2");
+                       
+                        display = $('td').children('.processTimer').eq(j);
+                        startTimer(tenMins, display);
+                        console.log('done1');
+                    }
+                    if(testInputArr[j] == 0){
+                        $('td').children('.inactivatedTime').eq(j).addClass("active2");
+                       
+                        console.log('done2');
+                    }
+                    console.log(testInputArr[j]);
+                    console.log(j);
+                    
+                }
+                console.log($('.active2').length);
+               
+            };
+          
+        </script>
+
+
+        <!--Script for navbar going transparent at top.-->
+        <script>
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $("#navbar");
+                    var $acc = $(".navTrigger");
+                    $nav.toggleClass('bg-transparent', $(this).scrollTop() > $nav.height());
+                    $nav.toggleClass('bg-dark', $(this).scrollTop() < $nav.height());
+
+                    $acc.toggleClass('text-dark', $(this).scrollTop() > $nav.height());
+                    $acc.toggleClass('text-white', $(this).scrollTop() < $nav.height());
+                });
+            });
+        </script>
+
+        <!--GSAP Animations-->
+        <script>
+            gsap.from('#all-graph_container', {opacity: 0, duration: 2, x:-20})
+        </script>
+    </body>
+
+</html>

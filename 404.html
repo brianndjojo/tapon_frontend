@@ -1,0 +1,368 @@
+<!doctype html>
+<html>
+    <head>
+         <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CDN & Stylesheets -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="stylesheets/main.css">
+        
+        <title>Error</title>
+    </head>
+
+    <body>
+        
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+        
+        
+                <div class="sidebar-header text-left mt-3">
+                    <div class="d-flex justify-content-start"  >
+                        <i class="fa fa-arrow-left" id="dismiss" style="cursor: pointer;"></i>
+                     </div>
+                    <h3 class="mt-3">TapOn</h3>
+                   
+                </div>
+        
+                <ul class="list-unstyled components">
+                    <li class="dropdown-header text-white">ACCOUNT</li> 
+                    
+                    <li class="mb-3 mt-3">
+                        <a href="#accSubmenu" data-toggle="collapse" aria-expanded="false" class="text-left font-weight-bold">Hello, User  <i class="fa fa-arrow-down" style="cursor: pointer;"></i></a>
+                        <ul class="collapse list-unstyled" id="accSubmenu">
+                            <li>
+                                <a href="#">Account</a>
+                            </li>
+                            <li>
+                                <a href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-header text-white">SERVICES</li> 
+                 
+                    <li class="active">
+                        <a href="#plantsSubmenu" data-toggle="collapse" aria-expanded="false">Plants-Description</a>
+                    </li>
+                    <li>
+                       
+                        <a href="#dischargeSubmenu" data-toggle="collapse" aria-expanded="false">Discharge-License</a>
+                        <ul class="collapse list-unstyled" id="dischargeSubmenu">
+                            <li>
+                                <a href="#">Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#schematicsSubmenu" data-toggle="collapse" aria-expanded="false">Schematics-Drawing</a>
+                        <ul class="collapse list-unstyled" id="schematicsSubmenu">
+                            <li>
+                                <a href="#">Upload</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#equipmentSubmenu" data-toggle="collapse" aria-expanded="false">Equipment-Condition</a>
+                        <ul class="collapse list-unstyled" id="equipmentSubmenu">
+                            <li>
+                                <a href="#">Fill</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#chemtSubmenu">Chemical-Consumption Rate</a>
+                    </li>
+
+                    <li class="dropdown-header text-white">OTHERS</li> 
+                    <li>
+                        <a href="#settingsSubmenu" data-toggle="collapse" aria-expanded="false">Settings</a>
+                        <ul class="collapse list-unstyled" id="settingsSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            
+         
+            <div id="content">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="navbar">
+
+                    <div class="container-fluid d-flex bd-highlight">
+                 
+                        <div id="navbarLogo" class="p-2 flex-grow-1 bd-highlight navTrigger text-white">TapOn</div>
+
+                        <div class="p-2 bd-highlight mr-3 text-white" id="accountGreeting" class="navTrigger">
+                            Hello, User.
+                        </div>
+                        <div class="p-2 bd-highlight"> 
+                            <button type="button" id="sidebarCollapse" class="btn btn-info ">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="errorContainer">
+                <p class="mega">4<span class="boom">0</span>4<div id="bola"></div></p>
+                <p class="mini">That's an error.</p>
+            </div>
+        </div>
+        
+        <!--CDNs-->
+        <!-- jQuery CDN-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+         
+        <!--GSAP Animations-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+         
+        <!--Chart.js CDN-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+        
+         <!--Sidebar javascript-->
+         <script type="text/javascript">
+          
+            $(document).ready(function () {
+                var win = $(window);
+                
+                //determine whether navbar transparent or not based on window settings.active
+                if(win.width() < 420){
+                    var $nav = $("#navbar");
+                    var $acc = $(".navTrigger");
+
+                    $nav.addClass("bg-transparent");
+                    $nav.removeClass("bg-dark");
+
+                    $acc.addClass("text-dark");
+                    $acc.removeClass("text-white");
+                }
+
+                //For sidebar resizing
+                $('#sidebarCollapse').on('click', function () {
+                    // trigger sidebar
+                    $('#sidebar').toggleClass('active');
+                    // trigger overlay
+                    $('.overlay').toggleClass('active');
+                 
+                    
+                });
+                
+                //For dismiss button in sidebar
+                $('#dismiss').on('click', function () {
+                    // hide sidebar
+                    $('#sidebar').toggleClass('active');
+                    // hide overlay
+                    $('.overlay').removeClass('active');
+                    $('div#all-graph_container').removeClass("shiftOut")
+                });
+            });
+        </script>
+
+        <!--Window resizing adjustment when sidebar is active-->
+        <script>
+            var win = $(window);
+            $(window).on('resize', function() {
+                var $nav = $('#navbar');
+                var $acc = $(".navTrigger");
+
+                if(win.width() < 500){
+                    $nav.removeClass('bg-dark');
+                    $nav.addClass('bg-transparent');
+
+                    $acc.addClass("text-dark");
+                    $acc.removeClass("text-white");
+                }
+                if(win.width() >= 500){
+                    $nav.removeClass('bg-transparent');
+                    $nav.addClass('bg-dark');
+
+                    
+                    $acc.addClass("text-white");
+                    $acc.removeClass("text-dark");
+                }
+                if(win.width() < 400){
+                    $('#sidebar').addClass('active');
+                    $('div#all-graph_container').addClass("shiftOut")
+                
+                }
+                else{
+                    $('div#all-graph_container').removeClass("shiftOut")
+             
+                }
+            });
+        </script>
+
+        <!--GSAP Animations-->
+        <script>
+            gsap.from('body', {opacity: 0, duration: 0.5})
+        </script>
+        
+        <!--404 animation scripts using three.js-->
+        <script src="stylesheets/three.min.js"></script>
+        <script>
+              // Find the latest version by visiting https://unpkg.com/three. The URL will
+            // redirect to the newest stable release.
+          
+
+            //for error handling specifically for three.js
+            var WEBGL = {
+                isWebGLAvailable: function () {
+
+                    try {
+
+                        var canvas = document.createElement( 'canvas' );
+                        return !! ( window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ) );
+
+                    } catch ( e ) {
+
+                        return false;
+
+                    }
+
+                },
+
+                isWebGL2Available: function () {
+
+                    try {
+
+                        var canvas = document.createElement( 'canvas' );
+                        return !! ( window.WebGL2RenderingContext && canvas.getContext( 'webgl2' ) );
+
+                    } catch ( e ) {
+
+                        return false;
+
+                    }
+
+                },
+
+                getWebGLErrorMessage: function () {
+
+                    return this.getErrorMessage( 1 );
+
+                },
+
+                getWebGL2ErrorMessage: function () {
+
+                    return this.getErrorMessage( 2 );
+
+                },
+
+                getErrorMessage: function ( version ) {
+
+                    var names = {
+                        1: 'WebGL',
+                        2: 'WebGL 2'
+                    };
+
+                    var contexts = {
+                        1: window.WebGLRenderingContext,
+                        2: window.WebGL2RenderingContext
+                    };
+
+                    var message = 'Your $0 does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">$1</a>';
+
+                    var element = document.createElement( 'div' );
+                    element.id = 'webglmessage';
+                    element.style.fontFamily = 'monospace';
+                    element.style.fontSize = '13px';
+                    element.style.fontWeight = 'normal';
+                    element.style.textAlign = 'center';
+                    element.style.background = '#fff';
+                    element.style.color = '#000';
+                    element.style.padding = '1.5em';
+                    element.style.width = '400px';
+                    element.style.margin = '5em auto 0';
+
+                    if ( contexts[ version ] ) {
+
+                        message = message.replace( '$0', 'graphics card' );
+
+                    } else {
+
+                        message = message.replace( '$0', 'browser' );
+
+                    }
+
+                    message = message.replace( '$1', names[ version ] );
+
+                    element.innerHTML = message;
+
+                    return element;
+
+                }
+
+            };
+         
+                
+            var container = $('#bola');
+            if ( WEBGL.isWebGLAvailable() ) {
+                // Initiate function or other initializations here
+                var scene = new THREE.Scene();
+                var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+                var renderer = new THREE.WebGLRenderer( { alpha: true } );
+                renderer.setSize( $(container).width(), $(container).height() );
+                renderer.setClearColor( 0x000000, 0 ); // the default
+                container.append( renderer.domElement );
+
+                var geometry = new THREE.BoxGeometry( 1.3, 0.7, 1 );
+                var material = new THREE.MeshBasicMaterial( { color: 0xff3333 } );
+                var cube = new THREE.Mesh( geometry, material );
+                scene.add( cube );
+                
+                camera.position.z = 4;
+
+                var animate = function () {
+                    requestAnimationFrame( animate );
+
+                    cube.rotation.x += 0.01;
+                    cube.rotation.y += 0.01;
+
+                    renderer.render( scene, camera );
+                };
+
+                animate();
+
+            } else {
+                const warning = WEBGL.getWebGLErrorMessage();
+                container.append( warning );
+            }
+            
+        </script>
+        
+        <!--Script for navbar going transparent at top.-->
+        <script>
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $("#navbar");
+                    var $acc = $(".navTrigger");
+                    $nav.toggleClass('bg-transparent', $(this).scrollTop() > $nav.height());
+                    $nav.toggleClass('bg-dark', $(this).scrollTop() < $nav.height());
+
+                    $acc.toggleClass('text-dark', $(this).scrollTop() > $nav.height());
+                    $acc.toggleClass('text-white', $(this).scrollTop() < $nav.height());
+                });
+            });
+        </script>
+
+     
+    </body>
+
+</html>
